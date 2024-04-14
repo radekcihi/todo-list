@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id       String  @id @default(cuid())
+  email    String  @unique
+  name     String?
+  password String?
+  todo     Todo[]
+}
+
+model Todo {
+  id        String    @id @default(cuid())
+  title     String
+  completed Boolean   @default(false)
+  user      User      @relation(fields: [userId], references: [id])
+  userId    String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  dueDate   DateTime?
+  badges    Badges[]
+}
+
+model Badges {
+  id        String   @id @default(cuid())
+  title     String
+  todo      Todo     @relation(fields: [todoId], references: [id])
+  todoId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
