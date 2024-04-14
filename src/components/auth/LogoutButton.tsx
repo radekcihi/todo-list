@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 export default function LogoutButton() {
 
     return (
-        <span className="cursor-pointer"  onClick={() => {
+        <span className="cursor-pointer w-full"  onClick={() => {
             signOut()
         }}>
             Logout

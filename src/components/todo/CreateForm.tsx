@@ -48,7 +48,7 @@ export default function CreateForm() {
                 duration: 1000,
             })
         })
-        //router.back()
+        router.back()
     }
     return (
         <>

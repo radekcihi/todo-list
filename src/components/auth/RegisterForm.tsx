@@ -113,11 +113,13 @@ export default function RegisterForm() {
                 <span className="text-gray-500">or</span>
                 <div className="w-1/4 h-0.5 bg-gray-300"></div>
             </div>
-            <Button
-                disabled={isPending}
-                className="w-full">
-                <Link href="/">Login</Link>
-            </Button>
+            <Link href="/">
+                <Button
+                    disabled={isPending}
+                    className="w-full">
+                    Login
+                </Button>
+            </Link>
 
         </Card >
     );
