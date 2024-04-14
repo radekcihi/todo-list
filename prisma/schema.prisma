@@ -27,14 +27,5 @@ model Todo {
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   dueDate   DateTime?
-  badges    Badges[]
 }
 
-model Badges {
-  id        String   @id @default(cuid())
-  title     String
-  todo      Todo     @relation(fields: [todoId], references: [id])
-  todoId    String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}

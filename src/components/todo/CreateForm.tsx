@@ -26,16 +26,7 @@ import {
 import { toast } from "../ui/use-toast";
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
-
-
-export const createFormSchema = z.object({
-    title: z.string({
-        required_error: "A title is required.",
-    }),
-    dueDate: z.date({
-        required_error: "A due date is required.",
-    }).optional(),
-})
+import { createFormSchema } from "@/schemes/todo";
 
 export default function CreateForm() {
     const router = useRouter()

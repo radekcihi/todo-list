@@ -1,10 +1,10 @@
 import { Prisma } from "@prisma/client";
 import db from "./prisma";
 import { auth } from "../lib/auth";
-import { updateFormSchema } from "@/components/todo/EditForm";
+import { updateFormSchema, createFormSchema } from "@/schemes/todo";
 import { z } from "zod";
 import { title } from "process";
-import { createFormSchema } from "@/components/todo/CreateForm";
+
 function queryBuilder(query: string | undefined) {
     switch (query) {
         case "completed":

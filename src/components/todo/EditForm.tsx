@@ -27,17 +27,10 @@ import { toast } from "@/components/ui/use-toast"
 import { Switch } from "../ui/switch";
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { updateFormSchema } from "@/schemes/todo";
 
 
-export const updateFormSchema = z.object({
-    title: z.string({
-        required_error: "A title is required.",
-    }).optional(),
-    dueDate: z.date({
-        required_error: "A due date is required.",
-    }).optional(),
-    completed: z.boolean().optional(),
-})
+
 
 export default function EditForm({ todo }: { todo: Todo }) {
     const [isPending, startTransition] = useTransition();

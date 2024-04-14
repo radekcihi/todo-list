@@ -1,11 +1,11 @@
 "use server";
 
-import { createFormSchema } from "@/components/todo/CreateForm";
-import { updateFormSchema } from "@/components/todo/EditForm";
+
 import { auth } from "@/lib/auth";
 import { createTodo, deleteTodo, updateTodo } from "@/db/todos";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
+import { createFormSchema, updateFormSchema } from "@/schemes/todo";
 
 
 export async function createTodoAction(data: z.infer<typeof createFormSchema>) {
